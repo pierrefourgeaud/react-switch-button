@@ -49,7 +49,6 @@
       title: React.PropTypes.string,
       label: React.PropTypes.string,
       labelRight: React.PropTypes.string,
-      defaultChecked: React.PropTypes.string,
       theme: React.PropTypes.string,
       checked: React.PropTypes.string,
       onChange: React.PropTypes.func
@@ -58,7 +57,7 @@
     /**
      * Default propos.
      *
-     * @returns {{id: string, name: string, title: string, label: string, labelRight: string, defaultChecked: string, theme: string, checked: null, onChange: *}}
+     * @returns {{id: string, name: string, title: string, label: string, labelRight: string, theme: string, checked: null, onChange: *}}
      */
     getDefaultProps: function () {
       return {
@@ -67,7 +66,6 @@
         title: '',
         label: '',
         labelRight: '',
-        defaultChecked: '',
         theme: 'rsbc-switch-button-flat-round',
         checked: null,
         onChange: this.handleChange
@@ -111,7 +109,7 @@
         'div',
         { className: 'rsbc-switch-button ' + this.props.theme },
         label,
-        React.createElement('input', { onChange: this.props.onChange, checked: this.props.checked, defaultChecked: this.props.defaultChecked,
+        React.createElement('input', { onChange: this.props.onChange, checked: this.props.checked,
           id: id, name: this.props.name, type: 'checkbox', value: '1' }),
         React.createElement('label', { htmlFor: id }),
         labelRight
